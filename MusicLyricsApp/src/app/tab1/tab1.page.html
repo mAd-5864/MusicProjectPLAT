@@ -23,11 +23,10 @@
         <div *ngFor="let track of tracks">
           <ion-card>
             <ion-card-header>
-              <ion-card-subtitle>ola</ion-card-subtitle>
-              <ion-card-title>olaaa</ion-card-title>
+              <ion-card-subtitle>{{track.track.track_name}}</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
-              {{track.track.track_name}}
+              {{track.track.artist_name}}
             </ion-card-content>
           </ion-card>
         </div>
