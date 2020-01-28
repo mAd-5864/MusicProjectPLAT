@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MusicapiService } from '../musicapi.service';
 
 @Component({
   selector: 'app-tab2',
@@ -8,14 +8,22 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  filterArgs={ music_genre_name: "Acoustic Bues"}
-  genres=[];
-  constructor() {}
+  genres = [];
+  searchText = "Blues"
 
-  ngOnInit(){
+  constructor(private MusicapiService: MusicapiService) { }
 
+  ngOnInit() {
+    this.findGenres()
   }
 
-  
-
+  findGenres() {
+    this.MusicapiService.findGenres().subscribe(
+      (data: any) => {
+        console.log(data)
+        this.genres = data.message.body.music_genre_list
+        console.log(this.genres[0])
+      }
+    )
+  }
 }

@@ -8,12 +8,15 @@ export class MusicapiService {
 
   constructor(private http: HttpClient) { }
 
-  findLyrics(track) {
-    // return this.http.get("https://api.musixmatch.com/ws/1.1/track.search?format=json&callback=jsonp&q_track=" + track + "&quorum_factor=1&apikey=e3edc248939ca19a3546f63ca83b24ab")
-    return this.http.get("https://api.musixmatch.com/ws/1.1/music.genres.get?format=json&callback=jsonp&q_track=" + track + "&quorum_factor=1&apikey=e3edc248939ca19a3546f63ca83b24ab")
+  findTrack(track) {
+    return this.http.get("https://api.musixmatch.com/ws/1.1/track.search?format=json&callback=jsonp&q_track=" + track + "&f_has_lyrics=1&page_size=20&s_track_rating=desc&quorum_factor=1&apikey=e3edc248939ca19a3546f63ca83b24ab")
   }
 
-  findGenres(genre) {
-    return this.http.get("https://api.musixmatch.com/ws/1.1/?format=json&callback=jsonp&q_track=" + genre + "&quorum_factor=1&apikey=e3edc248939ca19a3546f63ca83b24ab")
+  findGenres() {
+    return this.http.get("https://api.musixmatch.com/ws/1.1/music.genres.get?format=json&callback=jsonp&quorum_factor=1&f_has_lyrics=1&apikey=e3edc248939ca19a3546f63ca83b24ab")
+  }
+
+  findLyrics(track_id) {
+    return this.http.get("https://api.musixmatch.com/ws/1.1/track.lyrics.get?format=json&callback=jsonp&track_id="  + track_id + "&apikey=e3edc248939ca19a3546f63ca83b24ab")
   }
 }

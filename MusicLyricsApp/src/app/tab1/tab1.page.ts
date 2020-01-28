@@ -14,14 +14,14 @@ export class Tab1Page {
   constructor(private MusicapiService: MusicapiService) { }
 
   ngOnInIt() {
-    this.findTrack()
+    this.findTrackName()
   }
 
-  findTrack() {
-    this.MusicapiService.findLyrics(this.track).subscribe(
-      (data:any)=> {
+  findTrackName() {
+    this.MusicapiService.findTrack(this.track).subscribe(
+      (data: any) => {
         console.log(data)
-         this.tracks = data.message.body.track_list
+        this.tracks = data.message.body.track_list
       }
     )
   }
