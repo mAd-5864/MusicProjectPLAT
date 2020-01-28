@@ -13,7 +13,7 @@
       <ion-col>
         <ion-item>
           <ion-label position="floating"></ion-label>
-          <ion-input placeholder="Search" [(ngModel)]="track" required></ion-input>
+          <ion-input type="search" placeholder="Search" [(ngModel)]="track" required></ion-input>
           <ion-icon class="searchIcon" name="search" slot="end" (click)="findTrack()"></ion-icon>
         </ion-item>
       </ion-col>
@@ -23,11 +23,8 @@
         <div *ngFor="let track of tracks">
           <ion-card>
             <ion-card-header>
-              <ion-card-subtitle>{{track.track.track_name}}</ion-card-subtitle>
+              <ion-card-subtitle>{{track.track.track_name}} - {{track.track.artist_name}}</ion-card-subtitle>
             </ion-card-header>
-            <ion-card-content>
-              {{track.track.artist_name}}
-            </ion-card-content>
           </ion-card>
         </div>
       </ion-col>
