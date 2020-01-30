@@ -8,7 +8,7 @@ import { MusicapiService } from '../musicapi.service';
 })
 export class Tab1Page {
 
-  track: any
+  track = "Yummy";
   tracks: any;
 
   constructor(private MusicapiService: MusicapiService) { }
