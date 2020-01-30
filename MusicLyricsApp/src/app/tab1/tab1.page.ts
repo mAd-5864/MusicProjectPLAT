@@ -11,7 +11,9 @@ export class Tab1Page {
   tracks: any;
   track = "Yummy";
 
-  constructor(private MusicapiService: MusicapiService) { }
+  
+
+  constructor(private MusicapiService: MusicapiService) { this.findTopTracks() }
 
   ngOnInIt() {
     this.findTrackName()
@@ -20,6 +22,14 @@ export class Tab1Page {
   findTrackName() {
     this.MusicapiService.findTrack(this.track).subscribe(
       (data: any) => {
+        this.tracks = data.message.body.track_list
+      }
+    )
+  }
+  findTopTracks() {
+    this.MusicapiService.findTrackByGenre(34).subscribe(
+      (data: any) => {
+        console.log(data)
         this.tracks = data.message.body.track_list
       }
     )
