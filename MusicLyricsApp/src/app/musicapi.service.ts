@@ -19,4 +19,7 @@ export class MusicapiService {
   findLyrics(track_id) {
     return this.http.get("https://api.musixmatch.com/ws/1.1/track.lyrics.get?format=json&callback=jsonp&track_id="  + track_id + "&apikey=e3edc248939ca19a3546f63ca83b24ab")
   }
+  findTrackName(track_id) {
+    return this.http.get("https://api.musixmatch.com/ws/1.1/track.get?format=json&callback=callback&track_id=" + track_id + "&apikey=e3edc248939ca19a3546f63ca83b24ab")
+  }
 }
