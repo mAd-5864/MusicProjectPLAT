@@ -1,13 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>lyric</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>{{trackName}} - {{trackArtist}}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content  >
+<ion-content>
 
-  <!-- <div *ngFor="item of y">
-    {{item}}
-  </div> -->
-{{lyric}}
-</ion-content >
+    <div *ngFor="let item of (y | slice: 0:-4);">
+        <p>{{item}}</p>
+
+    </div>
+    <!--     {{y}} -->
+</ion-content>
