@@ -21,7 +21,7 @@
         <ion-row>
             <ion-col>
                 <div *ngFor="let genre of genres | filter : searchText">
-                    <ion-card>
+                    <ion-card [routerLink]="['/music-by-genre', genre.music_genre.music_genre_id]">
                         <ion-card-header>
                             <ion-card-subtitle>{{genre.music_genre.music_genre_name}}</ion-card-subtitle>
                         </ion-card-header>

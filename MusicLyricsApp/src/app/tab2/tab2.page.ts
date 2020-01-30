@@ -9,7 +9,10 @@ import { MusicapiService } from '../musicapi.service';
 export class Tab2Page {
 
   genres = [];
-  searchText = "Blues"
+  searchText = ""
+
+  music_genre_id: any
+  genre_name: any
 
   constructor(private MusicapiService: MusicapiService) { }
 
@@ -26,4 +29,13 @@ export class Tab2Page {
       }
     )
   }
+
+  findTrackByGenre() {
+    this.MusicapiService.findTrackByGenre(this.music_genre_id).subscribe(
+      (data: any) => {
+        this.music_genre_id = data.message.body.music_genre_list.music_genre_id
+      }
+    )
+  }
+
 }
