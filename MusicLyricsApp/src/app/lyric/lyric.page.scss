@@ -13,7 +13,7 @@
 }
 
 ion-content {
-    --background: linear-gradient(white 10%, lightblue 100%);
+    --background: linear-gradient(white 1%, lightblue 100%);
 }
 
 .textColor {
@@ -22,8 +22,4 @@ ion-content {
 
 ion-title {
     --color: #3880ff;
-}
-
-ion-toolbar {
-    --background: linear-gradient(lightblue -60%, white);
 }

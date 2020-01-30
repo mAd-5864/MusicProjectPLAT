@@ -9,9 +9,9 @@ import { MusicapiService } from '../musicapi.service';
 export class Tab1Page {
 
   tracks: any;
-  track = "Yummy";
+  track: any;
 
-  
+
 
   constructor(private MusicapiService: MusicapiService) { this.findTopTracks() }
 

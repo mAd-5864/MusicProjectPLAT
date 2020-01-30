@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
     <ion-toolbar>
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/"></ion-back-button>
@@ -11,9 +11,9 @@
     <ion-row>
         <ion-col>
             <div *ngFor="let track of tracks">
-                <ion-card [routerLink]="['/lyric', track.track.track_id]">
+                <ion-card class="cardColour" [routerLink]="['/lyric', track.track.track_id]">
                     <ion-card-header>
-                        <ion-card-subtitle>{{track.track.track_name}} - <i>{{track.track.artist_name}}</i></ion-card-subtitle>
+                        <ion-card-subtitle class="textColor">{{track.track.track_name}} - <i>{{track.track.artist_name}}</i></ion-card-subtitle>
                     </ion-card-header>
                 </ion-card>
             </div>
