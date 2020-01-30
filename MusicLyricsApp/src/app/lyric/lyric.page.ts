@@ -28,15 +28,12 @@ export class LyricPage implements OnInit {
   findTrackId() {
     this.MusicapiService.findLyrics(this.track_id).subscribe(
       (data: any) => {
-        console.log(data)
         this.lyric = data.message.body.lyrics.lyrics_body
         this.y = this.lyric.split(/\n/)
-        console.log(this.y)   
       }
     )
     this.MusicapiService.findTrackName(this.track_id).subscribe(
       (data: any) => {
-        console.log(data)
         this.trackName = data.message.body.track.track_name
         this.trackArtist = data.message.body.track.artist_name
       }

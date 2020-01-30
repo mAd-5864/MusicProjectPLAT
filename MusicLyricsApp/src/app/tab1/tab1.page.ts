@@ -8,7 +8,7 @@ import { MusicapiService } from '../musicapi.service';
 })
 export class Tab1Page {
 
-  track: any
+  track = "Yummy";
   tracks: any;
 
   constructor(private MusicapiService: MusicapiService) { }
@@ -20,7 +20,6 @@ export class Tab1Page {
   findTrackName() {
     this.MusicapiService.findTrack(this.track).subscribe(
       (data: any) => {
-        console.log(data)
         this.tracks = data.message.body.track_list
       }
     )
