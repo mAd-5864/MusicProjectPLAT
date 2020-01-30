@@ -1,13 +1,23 @@
-<ion-header>
+<<<<<<< HEAD
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>
       Géneros
     </ion-title>
   </ion-toolbar>
+=======
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Géneros
+        </ion-title>
+    </ion-toolbar>
+>>>>>>> 3bd6a073618dae3cfc9e35d5ec2a6a6363841aa4
 </ion-header>
 
 <ion-content>
 
+<<<<<<< HEAD
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -21,14 +31,38 @@
     <ion-row>
       <ion-col>
         <div *ngFor="let genre of genres | filter : searchText">
-          <ion-card>
+          <ion-card class="cardColour">
             <ion-card-header>
-              <ion-card-subtitle>{{genre.music_genre.music_genre_name}}</ion-card-subtitle>
+              <ion-card-subtitle class="textColor">{{genre.music_genre.music_genre_name}}</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
+=======
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating"></ion-label>
+                    <ion-input placeholder="Pesquisa por Género" [(ngModel)]="searchText" required></ion-input>
+                    <ion-icon class="searchIcon" name="search" slot="end"></ion-icon>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div *ngFor="let genre of genres | filter : searchText">
+                    <ion-card [routerLink]="['/music-by-genre', genre.music_genre.music_genre_id]">
+                        <ion-card-header>
+                            <ion-card-subtitle>{{genre.music_genre.music_genre_name}}</ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+>>>>>>> 3bd6a073618dae3cfc9e35d5ec2a6a6363841aa4
 
 </ion-content>

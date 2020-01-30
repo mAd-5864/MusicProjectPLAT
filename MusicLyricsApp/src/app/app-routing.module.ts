@@ -9,7 +9,12 @@ const routes: Routes = [
   {
     path: 'lyric/:id',
     loadChildren: () => import('./lyric/lyric.module').then( m => m.LyricPageModule)
+  },
+  {
+    path: 'music-by-genre/:id',
+    loadChildren: () => import('./music-by-genre/music-by-genre.module').then( m => m.MusicByGenrePageModule)
   }
+
 
 ];
 @NgModule({
