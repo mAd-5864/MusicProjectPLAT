@@ -27,6 +27,7 @@ export class MusicByGenrePage implements OnInit {
       (data: any) => {
         console.log(data)
         this.tracks = data.message.body.track_list
+        this.genreName  = data.message.body.track_list[0].track.primary_genres.music_genre_list[0].music_genre.music_genre_name
       }
     )
   }
