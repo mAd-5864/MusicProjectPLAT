@@ -1,23 +1,12 @@
-<<<<<<< HEAD
 <ion-header no-border>
   <ion-toolbar>
     <ion-title>
       Sopa de Letras
     </ion-title>
   </ion-toolbar>
-=======
-<ion-header>
-    <ion-toolbar>
-        <ion-title>
-            Sopa de Letras
-        </ion-title>
-    </ion-toolbar>
->>>>>>> 3bd6a073618dae3cfc9e35d5ec2a6a6363841aa4
 </ion-header>
 
 <ion-content>
-
-<<<<<<< HEAD
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -40,29 +29,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-=======
-    <ion-grid class="backgroundColour">
-        <ion-row>
-            <ion-col>
-                <ion-item>
-                    <ion-label position="floating"></ion-label>
-                    <ion-input placeholder="Pesquisa por Música ou Artista" [(ngModel)]="track" required></ion-input>
-                    <ion-icon class="searchIcon" name="search" slot="end" (click)="findTrackName()"></ion-icon>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <div *ngFor="let track of tracks">
-                    <ion-card class="cardColour" [routerLink]="['/lyric', track.track.track_id]">
-                        <ion-card-header>
-                            <ion-card-subtitle>{{track.track.track_name}} - {{track.track.artist_name}}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-card>
-                </div>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
->>>>>>> 3bd6a073618dae3cfc9e35d5ec2a6a6363841aa4
 
 </ion-content>
