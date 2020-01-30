@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
     <ion-toolbar>
         <ion-title>
             Sopa de Letras
@@ -7,8 +7,7 @@
 </ion-header>
 
 <ion-content>
-
-    <ion-grid class="backgroundColour">
+    <ion-grid>
         <ion-row>
             <ion-col>
                 <ion-item>
@@ -23,7 +22,7 @@
                 <div *ngFor="let track of tracks">
                     <ion-card class="cardColour" [routerLink]="['/lyric', track.track.track_id]">
                         <ion-card-header>
-                            <ion-card-subtitle>{{track.track.track_name}} - <i>{{track.track.artist_name}}</i></ion-card-subtitle>
+                            <ion-card-subtitle class="textColor">{{track.track.track_name}} - <i>{{track.track.artist_name}}</i></ion-card-subtitle>
                         </ion-card-header>
                     </ion-card>
                 </div>

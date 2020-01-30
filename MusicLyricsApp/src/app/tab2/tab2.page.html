@@ -1,34 +1,34 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>
-            Géneros
-        </ion-title>
-    </ion-toolbar>
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      Géneros
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <ion-item>
-                    <ion-label position="floating"></ion-label>
-                    <ion-input placeholder="Pesquisa por Género" [(ngModel)]="searchText" required></ion-input>
-                    <ion-icon class="searchIcon" name="search" slot="end"></ion-icon>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <div *ngFor="let genre of genres | filter : searchText">
-                    <ion-card [routerLink]="['/music-by-genre', genre.music_genre.music_genre_id]">
-                        <ion-card-header>
-                            <ion-card-subtitle>{{genre.music_genre.music_genre_name}}</ion-card-subtitle>
-                        </ion-card-header>
-                    </ion-card>
-                </div>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating"></ion-label>
+          <ion-input placeholder="Pesquisa por Género" [(ngModel)]="searchText" required></ion-input>
+          <ion-icon class="searchIcon" name="search" slot="end"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div *ngFor="let genre of genres | filter : searchText">
+          <ion-card class="cardColour">
+            <ion-card-header>
+              <ion-card-subtitle class="textColor">{{genre.music_genre.music_genre_name}}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

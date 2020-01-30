@@ -7,3 +7,23 @@
     padding-top: 20px;
     font-size: 30px;
 }
+
+.cardColour {
+    background: white
+}
+
+ion-content {
+    --background: linear-gradient(white 10%, lightblue 100%);
+}
+
+.textColor {
+    color: rgb(97, 167, 190)
+}
+
+ion-title {
+    --color: #3880ff;
+}
+
+ion-toolbar {
+    --background: linear-gradient(lightblue -60%, white);
+}
