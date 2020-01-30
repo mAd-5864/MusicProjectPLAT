@@ -9,7 +9,7 @@ import { MusicapiService } from '../musicapi.service';
 export class Tab2Page {
 
   genres = [];
-  searchText = ""
+  searchText = "Blues"
 
   music_genre_id: any
   genre_name: any
