@@ -4,8 +4,10 @@
             <ion-back-button defaultHref="/"></ion-back-button>
         </ion-buttons>
         <ion-title>{{trackName}} - {{trackArtist}}</ion-title>
-        <ion-buttons slot="end">
-            <ion-icon name="heart" slot="end"></ion-icon></ion-buttons>
+        <ion-buttons class="favHeart" slot="end">
+            <span class="closeToHeart">Add</span>
+            <ion-icon name="heart" slot="end"></ion-icon>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 <ion-content>
