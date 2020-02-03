@@ -12,9 +12,12 @@ export class FavouritesService {
   addToFavourites(obj) {
     console.log(obj)
     this.favouriteList.push(obj)
+    console.log("-----------");
+    console.log(this.favouriteList);
   }
 
   getFavouriteList(){
     return this.favouriteList
   }
 }
+ 

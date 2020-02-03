@@ -1,9 +1,23 @@
 <ion-header no-border>
-  <ion-toolbar>
-    <ion-title>
-      Favoritos
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Favoritos
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div *ngFor="let track of favouriteList">
+                    <ion-card class="cardColour" [routerLink]="['/lyric', track.track_id]">
+                        <ion-card-header>
+                            <ion-card-subtitle class="textColor">{{track.track_name}} - <i>{{track.track_artist}}</i></ion-card-subtitle>
+                        </ion-card-header>
+                    </ion-card>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
