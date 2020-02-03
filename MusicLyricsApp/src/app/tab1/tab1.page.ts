@@ -20,18 +20,18 @@ export class Tab1Page {
   }
 
   findTrackName() {
-    this.MusicapiService.findTrack(this.track); {
+    this.MusicapiService.findTrack(this.track).subscribe(
       (data: any) => {
         this.tracks = data.message.body.track_list
       }
-    }
+    )
   }
   findTopTracks() {
-    this.MusicapiService.findTrackByGenre(34);{
+    this.MusicapiService.findTrackByGenre(34).subscribe(
       (data: any) => {
         console.log(data)
         this.tracks = data.message.body.track_list
       }
-    }
+    )
   }
 }

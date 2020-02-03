@@ -19,24 +19,24 @@ export class LyricPage implements OnInit {
   constructor(private MusicapiService: MusicapiService, private route: ActivatedRoute, ) { }
 
   ngOnInit() {
-    this.route.paramMap;{(params => {
+    this.route.paramMap.subscribe(params => {
       this.track_id = params.get('id');
-    })};
+    });
     this.findTrackId()
   }
 
   findTrackId() {
-    this.MusicapiService.findLyrics(this.track_id);{(
+    this.MusicapiService.findLyrics(this.track_id).subscribe(
       (data: any) => {
         this.lyric = data.message.body.lyrics.lyrics_body
         this.y = this.lyric.split(/\n/)
       }
-    )}
-    this.MusicapiService.findTrackName(this.track_id);{(
+    )
+    this.MusicapiService.findTrackName(this.track_id).subscribe(
       (data: any) => {
         this.trackName = data.message.body.track.track_name
         this.trackArtist = data.message.body.track.artist_name
       }
-    )}
+    )
   }
 }
