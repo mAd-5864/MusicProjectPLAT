@@ -7,7 +7,17 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div class="ion-text-center" *ngFor="let item of (y | slice: 0:-4);">
-        <p>{{item}}</p>
-    </div>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="1">
+            </ion-col>
+            <ion-col size="10">
+                <div class="ion-text-center" *ngFor="let item of (y | slice: 0:-4);">
+                    <p class="lyricColor">{{item}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>
