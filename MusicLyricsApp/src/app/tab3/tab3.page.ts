@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FavouritesService } from '../favourites.service';
+/* import { NativeStorage } from '@ionic-native/native-storage/ngx'; */
 
 @Component({
   selector: 'app-tab3',
@@ -10,7 +11,7 @@ export class Tab3Page {
 
   favouriteList = []
 
-  constructor(private FavouritesService:FavouritesService) {}
+  constructor(private FavouritesService: FavouritesService) {}
 
   ngOnInit() {
     this.favouriteList = this.FavouritesService.getFavouriteList()

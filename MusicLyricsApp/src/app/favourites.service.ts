@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgForOf } from '@angular/common';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class FavouritesService {
 
   favouriteList = []
 
-  constructor() { }
+  constructor(private nativeStorage: NativeStorage) { }
 
   addToFavourites(obj) {
     for (let i = 0; i <= this.favouriteList.length; i++) {
@@ -44,4 +45,12 @@ export class FavouritesService {
   getFavouriteList() {
     return this.favouriteList
   }
+
+  nativeStorageGet(){
+    return this.nativeStorage.getItem('favouriteList')
+  }
+
+    nativeStorageSet(storage){
+      this.nativeStorage.setItem('favouriteList', storage)
+    }
 }

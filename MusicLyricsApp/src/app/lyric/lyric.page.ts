@@ -3,6 +3,7 @@ import { MusicapiService } from '../musicapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { FavouritesService } from '../favourites.service';
 
+
 @Component({
   selector: 'app-lyric',
   templateUrl: './lyric.page.html',
@@ -15,6 +16,7 @@ export class LyricPage implements OnInit {
   y: any
   trackName: any
   trackArtist: any
+  storage: any
 
 
   constructor(private MusicapiService: MusicapiService, private route: ActivatedRoute, private FavouritesService: FavouritesService) {  }
@@ -25,6 +27,7 @@ export class LyricPage implements OnInit {
     });
     this.findTrackId();
     this.updateFavouriteButton();
+    this.nativeStorageGet()
   }
 
   findTrackId() {
@@ -48,5 +51,19 @@ export class LyricPage implements OnInit {
 
   addToFavouriteList() {
     this.FavouritesService.addToFavourites({ track_name: this.trackName, track_artist: this.trackArtist, track_id: this.track_id })
+    this.nativeStorageSet()
   }
+
+  nativeStorageGet(){
+    this.storage = this.FavouritesService.nativeStorageGet()
+  }
+
+  nativeStorageSet(){
+    this.FavouritesService.nativeStorageSet(this.storage)
+    this.storage = this.FavouritesService.nativeStorageGet()
+  }
+
+  
+  
+  
 }
