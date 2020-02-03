@@ -21,20 +21,20 @@ export class Tab2Page {
   }
 
   findGenres() {
-    this.MusicapiService.findGenres().subscribe(
+    this.MusicapiService.findGenres();{
       (data: any) => {
         console.log(data)
         this.genres = data.message.body.music_genre_list
         console.log(this.genres[0])
       }
-    )
+    }
   }
 
   findTrackByGenre() {
-    this.MusicapiService.findTrackByGenre(this.music_genre_id).subscribe(
+    this.MusicapiService.findTrackByGenre(this.music_genre_id);{
       (data: any) => {
         this.music_genre_id = data.message.body.music_genre_list.music_genre_id
       }
-    )
+    }
   }
 }
