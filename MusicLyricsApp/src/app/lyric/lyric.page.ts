@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicapiService } from '../musicapi.service';
 import { ActivatedRoute } from '@angular/router';
+import { FavouritesService } from '../favourites.service';
 
 @Component({
   selector: 'app-lyric',
@@ -16,7 +17,7 @@ export class LyricPage implements OnInit {
   trackArtist: any
 
 
-  constructor(private MusicapiService: MusicapiService, private route: ActivatedRoute, ) { }
+  constructor(private MusicapiService: MusicapiService, private route: ActivatedRoute, private FavouritesService: FavouritesService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -38,5 +39,9 @@ export class LyricPage implements OnInit {
         this.trackArtist = data.message.body.track.artist_name
       }
     )
+  }
+
+  addToFavouriteList() {
+    this.FavouritesService.addToFavourites({ track_name: this.trackName, track_artist: this.trackArtist, track_id: this.track_id })
   }
 }

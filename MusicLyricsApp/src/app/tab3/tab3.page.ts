@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavouritesService } from '../favourites.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  favouriteList = []
 
+  constructor(private FavouritesService:FavouritesService) {}
+
+  ngOnInit() {
+    this.favouriteList = this.FavouritesService.getFavouriteList()
+    console.log(this.favouriteList)
+  }
 }

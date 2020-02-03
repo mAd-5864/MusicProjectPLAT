@@ -5,5 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class FavouritesService {
 
+  favouriteList = []
+
   constructor() { }
+
+  addToFavourites(obj) {
+    console.log(obj)
+    this.favouriteList.push(obj)
+  }
+
+  getFavouriteList(){
+    return this.favouriteList
+  }
 }
