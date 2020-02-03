@@ -17,13 +17,14 @@ export class LyricPage implements OnInit {
   trackArtist: any
 
 
-  constructor(private MusicapiService: MusicapiService, private route: ActivatedRoute, private FavouritesService: FavouritesService) { }
+  constructor(private MusicapiService: MusicapiService, private route: ActivatedRoute, private FavouritesService: FavouritesService) {  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.track_id = params.get('id');
     });
-    this.findTrackId()
+    this.findTrackId();
+    this.updateFavouriteButton();
   }
 
   findTrackId() {
@@ -40,6 +41,10 @@ export class LyricPage implements OnInit {
       }
     )
   }
+  updateFavouriteButton() {
+    this.FavouritesService.updateFavourite({ track_name: this.trackName, track_artist: this.trackArtist, track_id: this.track_id })
+  }
+
 
   addToFavouriteList() {
     this.FavouritesService.addToFavourites({ track_name: this.trackName, track_artist: this.trackArtist, track_id: this.track_id })
