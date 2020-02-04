@@ -15,7 +15,7 @@ export class Tab3Page {
 
   ngOnInit() {
     this.nativeStorageGet()
-    /* this.favouriteList = this.FavouritesService.getFavouriteList() */
+    this.favouriteList = this.FavouritesService.getFavouriteList()
     console.log(this.favouriteList)
   }
 
